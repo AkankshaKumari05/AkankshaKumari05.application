@@ -1,0 +1,287 @@
+/* main page css starts here */
+body,p{
+    margin: 0px;
+}
+
+header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 1241px;
+    background: #fff;
+    z-index: 2;
+    font-family: sans-serif;
+}
+
+header p {
+    float: left;
+    padding : 18px
+}
+
+#mainEvents {
+    color: #b7a574;
+    padding: 0 50px;
+}
+
+
+
+#rightMenu {
+    float: right;
+    padding-right: 30px;
+}
+
+.link:hover, .active{
+    color: #b7a574;
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+#backImage {
+    background-image: url(Images/image3.png);
+    background-attachment: fixed;
+    width: 1241px;
+}
+#backImage2 {
+    background-image: url(Images/image2.png);
+    background-attachment: fixed;
+    width: 1241px;
+}
+
+#memoriesSection {
+    position: relative;
+    text-align: center;
+    font-size: 65px;
+    color: #fff;
+    padding: 30% 0 20%;
+    letter-spacing: 20px;
+}
+
+#memoriesSection p{
+    padding: 15px 0;
+}
+
+
+
+#servicesSection {
+    max-height: 700px;
+    display: flex;
+    flex-wrap: nowrap;
+    background: #fff;
+    position: relative;
+}
+
+#serBannerSec {
+    position: relative;
+    padding: 50px;
+}
+
+.serBanImg {
+    height: 580px;
+    width: 360px;
+}
+.serTextSec {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    left: 0%;
+    right: 0%;
+}
+
+#serTextSec1 {
+    top: 26%;
+    font-family: sans-serif;
+    letter-spacing: 14px;
+    /* font-weight: 544; */
+    font-size: 28px;
+}
+
+#serTextSec2 {
+    top: 47%;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#serTextSec2 p {
+    padding: 10px 0;
+}
+
+
+#serTextSec3 {
+    bottom: 23%;
+}
+
+#secButton {
+    background: #a8925b;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px 70px;
+    /* margin: 2px; */
+    font-size: 15px;
+    /* font-weight: bold; */
+    text-align: center;
+    display: inline-block;
+    font-family: sans-serif;
+}
+
+#serImageSec {
+    padding: 50px 50px 50px 0;
+}
+
+.serImgSec {
+    height: 580px;
+    width: 730px;
+}
+
+
+
+
+
+#testimonialSection {
+	text-align: center;
+	font-family: sans-serif;
+	background: #fff;
+	position: relative;
+	padding-bottom: 10px;
+}
+
+#testQuoteSec {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: serif;
+}
+
+#testTextSec{
+    font-size: 30px;
+    font-family: serif;
+    letter-spacing: 3px;
+    color: #4a4343;
+}
+
+#testTextSec p{
+    padding: 5px 0;
+}
+
+#inviteeSec {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: small;
+    color: #a8925b;
+}
+
+
+
+
+#gallerySection {
+    position: relative;
+}
+
+.galImgSec {
+    width: 350px;
+    height: 550px;
+    /* position: absolute; */
+    left: 62%;
+    position: relative;
+    padding: 50px;
+}
+
+.galTextSec{
+    position: absolute;
+    color: #fff;
+}
+
+#galTextSec1 {
+    top: 29%;
+    right: 12%;
+    font-size: 25px;
+    letter-spacing: 10px;
+    font-family: sans-serif;
+}
+
+#galTextSec2 {
+    top: 48%;
+    right: 13%;
+    letter-spacing: 5px;
+}
+
+#galTextSec2 p{
+    text-align: center;
+    padding: 6px 0;
+}
+
+#galTextSec3 {
+    bottom: 25%;
+    right: 11%;
+}
+
+
+
+
+footer {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    background: #a8925b;
+    padding: 60px 0px;
+    width: 1241px;
+}
+
+#contactUS {
+    flex: 66%;
+    display: flex;
+    padding: 0px 50px;
+}
+
+.contact {
+    flex: auto;
+    color: #fff;
+    font-size: 13px;
+    font-family: sans-serif;
+    border-right: 1px solid #fff;
+    padding-left: 60px;
+}
+
+.contact:last-child {
+    border-right: none;
+}
+
+#consultationBooking {
+    flex: 34%;
+    position: relative;
+}
+#consBButton {
+    position: absolute;
+    top: 12%;
+    right: 30%;
+    background: #a8925b;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px 14px;
+    /* margin: 2px; */
+    font-size: 12px;
+    /* font-weight: bold; */
+    /* text-align: center;*/
+    display: inline-block;
+    font-family: sans-serif;
+}
+
+/* main page css ends here */
+/* rightMenu page css starts here */
+.alink{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.rightMenuPage{
+    margin: 16px;
+}
+
+
+/* rightMenu page css ends here */
+/*common*/
