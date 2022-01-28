@@ -11,6 +11,7 @@ header {
     background: #fff;
     z-index: 2;
     font-family: sans-serif;
+    padding: 5px;
 }
 
 header p {
@@ -48,7 +49,7 @@ header p {
     background-image: url(Images/image2.png);
     background-attachment: fixed;
     width: 1141px;
-    margin: 0 50px;
+    margin: 50px;
 }
 
 #memoriesSection {
@@ -72,6 +73,7 @@ header p {
     flex-wrap: nowrap;
     background: #fff;
     position: relative;
+    padding: 20px 0;
 }
 
 #serBannerSec {
