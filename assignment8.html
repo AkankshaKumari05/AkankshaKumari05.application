@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        table, th, td {
+          border: 5px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+        }
+        </style>
+</head>
+<body>
+    <table class="table table-striped" style="width:60%" align="center">
+        <tbody >
+          <tr>
+            <td>API NAME</td>
+            <td>Link with parameter</td>
+            <td>Link with example</td>
+          </tr>
+        </tbody>
+        <tbody >
+            <tr>
+              <td>AutoComplete</td>
+              <td>https://stock-search-backend-server.wl.r.appspot.com/search/autocomplete/:ticker</td>
+              <td><a href="https://stock-search-backend-server.wl.r.appspot.com/search/autocomplete/TSLA">ticker = TSLA</a></td>
+            </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Company Details</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/companyDetails/:ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/companyDetails/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Latest Price</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/companyDetails/LatestStockPrice/ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/companyDetails/LatestStockPrice/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Company Peers</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/companyPeers/:ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/companyPeers/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Comapny News</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/companyNews/:ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/companyNews/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Historical Price</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/company/hightcharts/:ticker/:resolution/:from/:to</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/company/hightcharts/TSLA/D/1585699200/1648857600"> ticker=TSLA resolution: D from=1585699200 to=1648857600</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Daily Price</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/company/hightcharts/:ticker/:resolution/:from/:to</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/company/hightcharts/TSLA/5/1648821604/1648843204">ticker=TSLA resolution: 5 from=1648821604 to=1648843204</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Social Sentiments</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/companySocialSentiment/:ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/companySocialSentiment/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Earning Deatils</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/companyEarnings/:ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/search/autocomplete/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr>
+            <td>Recommendation Trend</td>
+            <td>https://stock-search-backend-server.wl.r.appspot.com/recommendationTrend/:ticker</td>
+            <td><a href="https://stock-search-backend-server.wl.r.appspot.com/recommendationTrend/TSLA">ticker = TSLA</a></td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>
