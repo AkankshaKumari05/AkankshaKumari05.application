@@ -1,0 +1,319 @@
+body,p{
+    margin: 0px;
+}
+.hide {
+    display: none;
+}
+#mainImage {
+    width: 1241px;
+    height: 250px
+}
+
+#homeText {
+    letter-spacing: 1px;
+    position: absolute;
+    top: 30px;
+    left: 555px;
+    font-size: 25px;
+    font-family: sans-serif;
+    width: 161px;
+}
+
+#searchBarIcon {
+    position: absolute;
+    top: 85px;
+    left: 395px;
+}
+
+#searchIcon {
+    border: none;
+    border-radius: 30% 0 0 30%;
+    height: 38px;
+    width: 40px;
+    background: #fff;
+    box-shadow: 0px 2px #ddd;
+}
+
+#searchBarText {
+    position: absolute;
+    top: 85px;
+    left: 435px;
+}
+
+#searchText {
+    width: 363px;
+    border: none;
+    padding: 0px 5px;
+    height: 38px;
+    box-shadow: 0px 2px #ddd;
+}
+#searchText:focus{
+    outline: none;
+}
+
+#searchBarCancel {
+    position: absolute;
+    top: 85px;
+    left: 810px;
+}
+.searchImage:hover{
+    filter: opacity(0.6);
+}
+
+.searchImage {
+    height: 15px;
+    filter: opacity(0.4);
+}
+
+#exclamation {
+    background: #F2AA05;
+    padding: 0px 6px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+#searchTooltip {
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 135px;
+    left: 580px;
+    filter: opacity(0.75);
+    padding: 6px;
+    box-shadow: 2px 2px 20px #ccc;
+    background: #fff;
+}
+
+#searchTooltip:after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 11px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent  #fff  transparent;
+}
+
+#searchCancel {
+    border: none;
+    border-radius: 0 30% 30% 0;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 1px 2px 2px #ddd;
+}
+
+
+
+
+
+
+#response {
+    position: relative;
+}
+
+#responseSuccess {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    background: #EEE;
+    padding: 15px 0px;
+    width: 1100px;
+    filter: opacity(0.75);
+}
+
+.active {
+    background: #999 !important;
+}
+
+.stockRes:hover {
+    background: #ccc;
+}
+
+.stockRes {
+    color: #000;
+    text-decoration: none;
+    background: #eee;
+    padding: 15px;
+    font-family: sans-serif;
+    margin: -2px;
+}
+
+#companyResDetail {
+    position: absolute;
+    top: 120px;
+    left: 320px;
+    text-align: center;
+    width: 650px;
+    font-family: sans-serif;
+}
+
+#companyLogo {
+    width: 100px;
+    height: 100px;
+}
+
+#stockSumResDetail {
+    width: 400px;
+    top: 80px;
+    text-align: center;
+    position: absolute;
+    left: 420px;
+    font-family: sans-serif;
+}
+
+.arrowSize{
+    height: 15px;
+    padding: 0 5px;
+    width: 15px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+#SSText {
+    width: 60px;
+    color: #ad0606;
+}
+
+#strongSell {
+    width: 40px;
+    background: #ad0606;
+    padding: 10px 0;
+    color: #fff;
+}
+#sell {
+    width: 40px;
+    background: #8e1515;
+    padding: 10px 0;
+    color: #fff;
+}
+#hold {
+    width: 40px;
+    background: #1a9334;
+    padding: 10px 0;
+    color: #fff;
+}
+#buy {
+    width: 40px;
+    background: #44bf22;
+    padding: 10px 0;
+    color: #fff;
+}
+#strongBuy {
+    width: 40px;
+    background: #7f6;
+    padding: 10px 0;
+    color: #fff;
+}
+
+#SBText {
+    width: 60px;
+    color: #44bf22;
+}
+
+.tableKey{
+    font-weight:600;
+    text-align: right;
+}
+
+.tableValue{
+    text-align: left;
+    font-weight: 100;
+}
+
+table{
+    width: 100%;
+    margin: 20px 0px;
+    table-layout: fixed;
+}
+td{
+    width: 50%;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+table, tr {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-left : 0px !important;
+    border-right : 0px !important;
+  }
+
+#chartsResDetail {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 1100px;
+    height: 500px;
+}
+
+
+
+
+
+#latestNewsResDetail {
+    position: absolute;
+    top: 80px;
+    left: 60px;
+    width: 1100px;
+    font-family: sans-serif;
+}
+
+.newsTab {
+    display: flex;
+    padding: 10px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+.image {
+    height: 90px;
+    width: 90px;
+}
+
+.newsTextTab {
+    padding: 0px 15px;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.date, .link {
+    font-weight: 100;
+}
+
+.resError {
+    position: absolute;
+    top: 150px;
+    padding: 15px 100px;
+    background: #E8E8E8;
+    border-radius: 12px;
+    box-shadow: 1px 2px 3px #ddd;
+    filter: opacity(0.75);
+}
+
+
+
+
+
+#responseError {
+    position: absolute;
+    top: 150px;
+    left: 325px;
+    padding: 15px 100px;
+    background: #E8E8E8;
+    border-radius: 12px;
+    box-shadow: 1px 2px 3px #ddd;
+    filter: opacity(0.75);
+}
+
+
+
+
+

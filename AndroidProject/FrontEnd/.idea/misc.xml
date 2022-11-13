@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.23097826086956522" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/round_btn_green.xml" value="0.251" />
+        <entry key="app/src/main/res/drawable/chart_line.xml" value="0.251" />
+        <entry key="app/src/main/res/drawable/clock.xml" value="0.251" />
+        <entry key="app/src/main/res/drawable/color_black.xml" value="0.2895" />
+        <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_baseline_trending_down_24.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_chrome.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_stock_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_twitter_logo.xml" value="0.2895" />
+        <entry key="app/src/main/res/drawable/ic_twitter_logo_dialog.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/ic_twotone_trending_up_24.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/news_share_border.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/round_btn_green.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/round_btn_white.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/round_corner_stroke.xml" value="0.256" />
+        <entry key="app/src/main/res/drawable/round_corners.xml" value="0.2415" />
+        <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/splash_launch_screen.xml" value="0.2895" />
+        <entry key="app/src/main/res/drawable/splash_launcher.xml" value="0.209" />
+        <entry key="app/src/main/res/drawable/toolbar_dropshadow.xml" value="0.2045" />
+        <entry key="app/src/main/res/drawable/twitter_logo_background.xml" value="0.2895" />
+        <entry key="app/src/main/res/layout/activity.xml" value="0.25653333333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.32907714843749997" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.19630192502532928" />
+        <entry key="app/src/main/res/layout/daily_chart.xml" value="0.22916666666666666" />
+        <entry key="app/src/main/res/layout/fav_body.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/fav_header.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/fragment_chart.xml" value="0.24791666666666667" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19630192502532928" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19630192502532928" />
+        <entry key="app/src/main/res/layout/hist_chart.xml" value="0.16614583333333333" />
+        <entry key="app/src/main/res/layout/news_lg.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/news_modal.xml" value="0.40415704387990764" />
+        <entry key="app/src/main/res/layout/news_sm.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/portfolio_body.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/portfolio_header.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/stat.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/trading_module.xml" value="0.19429347826086957" />
+        <entry key="app/src/main/res/layout/transaction.xml" value="0.3779697624190065" />
+        <entry key="app/src/main/res/menu/details.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/facebook_logo_round.xml" value="0.2895" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_stock.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_stock_round.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/twitter_logo.xml" value="0.2895" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/twitter_logo_round.xml" value="0.2895" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

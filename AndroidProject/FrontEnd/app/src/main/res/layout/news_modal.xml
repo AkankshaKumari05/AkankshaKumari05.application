@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/news_share_border">
+
+    <TextView
+        android:id="@+id/news_modal_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        tools:text="Yahoo"/>
+
+    <TextView
+        android:id="@+id/news_modal_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        tools:text="March 28, 2022"/>
+
+    <View
+        android:id="@+id/news_modal_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/toolbar_dropshadow" />
+
+    <TextView
+        android:id="@+id/news_modal_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:justificationMode="inter_word"
+        tools:text="Tesla Model S with motorized tilting screen spotted in the wild"/>
+
+    <TextView
+        android:id="@+id/news_modal_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:maxLines="10"
+        android:justificationMode="inter_word"
+        tools:text="On the conference call with analysts following results, Musk kept his remarks more focused on what many analysts consider Tesla’s more futuristic endeavors, promising that the newest Tesla vehicle would be a dedicated “robotaxi,” without steering wheel or pedals, that would hit volume production in 2024.On the conference call with analysts following results, Musk kept his remarks more focused on what many analysts consider Tesla’s more futuristic endeavors, promising that the newest Tesla vehicle would be a dedicated “robotaxi,” without steering wheel or pedals, that would hit volume production in 2024."/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+            <ImageButton
+                android:id="@+id/news_dialog_chrome"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_chrome" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+            <ImageButton
+                android:id="@+id/news_dialog_share_twitter"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/twitter_logo_round" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+            <ImageButton
+                android:id="@+id/news_dialog_share_facebook"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/facebook_logo_round" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

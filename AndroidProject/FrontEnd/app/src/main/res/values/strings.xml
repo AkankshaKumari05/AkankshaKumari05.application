@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Stocks</string>
+    <string name="search_title">Search</string>
+    <string name="footer_text">Powered by Finnhub</string>
+    <string name="load_error">Error occurred while loading data</string>
+    <string name="fav_header">FAVORITES</string>
+    <string name="port_header">PORTFOLIO</string>
+    <string name="port_s_header">Portfolio</string>
+    <string name="done">DONE</string>
+    <string name="fetch_error">Error occurred while fetching data</string>
+    <string name="trade">TRADE</string>
+    <string name="stats">Stats</string>
+    <string name="about">About</string>
+    <string name="news">News</string>
+    <string name="insights">Insights</string>
+    <string name="soc_sent">Social Sentiments</string>
+    <string name="share">shares</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

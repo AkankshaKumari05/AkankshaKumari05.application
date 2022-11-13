@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Search</title>
+    <meta http-equiv="content-type">
+    <meta content="text/html">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+</head>
+<body onload="onload()">
+    <div id="container">
+        <div id="searchTab">
+            <img src="appImage/back.svg" alt="image" id="mainImage">
+            <div id="homeText">
+                <p>Stock Search</p>
+            </div>
+            <div id="searchBarIcon">
+                <button id="searchIcon" onclick="getStockDetails()"><img src="appImage/searchIcon.svg" alt="image" class="searchImage" ></button>
+            </div>
+            <div id="searchBarText">
+                <input type="text" id="searchText" onfocus="checkSearchTextError()" oninput="this.value = this.value.toUpperCase()" placeholder="Enter Stock Ticker Symbol" value=""/>
+            </div>
+            <div id="searchTooltip" class="hide">
+                <p><span id="exclamation">!</span> Please fill out this field.</p>
+            </div>
+            <div id="searchBarCancel">
+                <button id="searchCancel" onclick="clearSearchTextBox()"><img src="appImage/searchCancel.svg" alt="image" class="searchImage" ></button>
+            </div>
+        </div>
+        <div id="response">
+            <div id="responseSuccess" class="hide">
+                <a href="#" id="companyRes" class="stockRes" onclick="getView('companyRes')">Company</a>
+                <a href="#" id="stockSumRes" class="stockRes" onclick="getView('stockSumRes')">Stock Summary</a>
+                <a href="#" id="chartsRes" class="stockRes" onclick="getView('chartsRes')">Charts</a>
+                <a href="#" id="latestNewsRes" class="stockRes" onclick="getView('latestNewsRes')">Latest News</a>
+            </div>
+            <div id="responseDetail" class="hide">
+                <div id="companyResDetail">  </div>
+                <div id="stockSumResDetail"> </div>
+                <div id="chartsResDetail">  </div>
+                <div id="latestNewsResDetail"> </div>
+                
+            </div>
+            <div id="responseError" class="hide">
+                <p id="responseErrorMsg"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
