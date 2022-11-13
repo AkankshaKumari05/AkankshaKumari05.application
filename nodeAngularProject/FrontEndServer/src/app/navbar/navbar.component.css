@@ -1,0 +1,22 @@
+
+.header {
+    background: #00B !important;
+    color: #fff;
+    padding: 0px;
+}
+
+.active {
+    border-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+
+.navLeft {
+    padding: 11px;
+    font-size: 20px;
+}
+
+.nav-item {
+    text-align: right;
+} 

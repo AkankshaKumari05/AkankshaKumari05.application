@@ -1,0 +1,29 @@
+
+<div class="tradeHeader m-3">
+    <div class="modal-title" id="modal-basic-title">
+      <h1 class="m-0 mb-3">{{ ticker }}</h1>
+    </div>
+    <button type="button" id="closeBtn" class="close p-0 border-0 m-2" aria-label="Close"
+      (click)="tradeModalService.close('close')">
+      <i class="fa fa-close"></i>
+    </button>
+</div>
+  
+  <div class="tradeBody card p-4">
+    <p>Current Price: {{ latestprice | number: "1.0-2" }}</p>
+    <p>Money in Wallet: ${{ walletMoney| number: "1.0-2" }}</p>
+    <p>Quantity <input [(ngModel)]="inputQnty" type="number" min="0" /></p>
+    <p class="text-danger" [hidden]= "!inputQnty || (inputQnty*latestprice <= walletMoney) || transType == 'Sell'">Not enough money in Wallet</p>
+    <p class="text-danger" [hidden]= "!inputQnty || (inputQnty <= purchasedQnty) || transType == 'Buy' "> You cannot sell the stock that you don't have! </p>
+  </div>
+
+  <div class="tradeFooter m-2">
+    <p class="mr-auto mt-2 ml-2">
+      Total : {{ inputQnty * latestprice | number: "1.2-2" }}
+    </p>
+    <button type="button" [disabled]=" !inputQnty || (purchasedQnty && inputQnty > purchasedQnty) || (inputQnty*latestprice > walletMoney && transType == 'Buy' )"
+      class="btn btn-outline-dark border-0 text-white bg-success border" (click)="trancaction()"
+      [class.bg-danger] = "transType == 'Sell'" [class.bg-success]= "transType == 'Buy'">
+      {{ transType }}
+    </button>
+  </div>

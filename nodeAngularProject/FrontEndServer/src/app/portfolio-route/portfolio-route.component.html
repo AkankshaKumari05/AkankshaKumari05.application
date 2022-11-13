@@ -1,0 +1,83 @@
+<div class="container mt-5 p-0 pt-5">
+  <ngb-alert  *ngIf="buySuccessMessage"  type="success" class="text-center" (close)="buySuccessMessage = ''" >
+    {{ ticker | uppercase }} bought successfully!
+  </ngb-alert> 
+
+  <ngb-alert  *ngIf="soldSuccessMessage"  type="danger" class="text-center" (close)="soldSuccessMessage = ''" >
+    {{ ticker | uppercase }} sold successfully!
+  </ngb-alert> 
+    <h1 class="portfolioHeader p-0 mx-2 ">My Portfolio</h1>
+    <h2 class="mx-2">Money in Wallet: ${{walletMoney}}</h2>
+  </div>
+  <div class="container my-0 p-0">
+    <mat-spinner *ngIf="!fetchFinish && !isEmpty" class="mt-4 mx-auto" ></mat-spinner>
+
+    <ngb-alert [dismissible]="false" *ngIf="isEmpty" class="text-center text-dark mx-3">
+        Currently you don't have any stock.
+    </ngb-alert>
+
+    <div *ngIf="fetchFinish && !isEmpty">
+      <div *ngFor="let data of PortfoliotData" class=" p-0 my-3 mx-2">
+        <div class="py-0 px-3 border border-bottom-0">
+          <div class="row p-2">
+            <h1 class="m-0 p-0">{{ data.ticker }}
+            <small class="text-secondary">{{ data.companyName }}</small></h1>
+          </div>
+        </div>
+        <div class="pl-2 pr-3 card">
+          <div class="stockItem row m-0 my-2 px-0">
+            <div class="col-sm p-0 m-0 mx-2">
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">Quantity:</div>
+                <div class="col m-0 p-0 text-right font-weight-bold">
+                  {{ data.quantity }}
+                </div>
+              </div>
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">Avg. Cost/Share:</div>
+                <div class="col m-0 p-0 text-right font-weight-bold">
+                  {{ data.avgCost | number: "1.0-2" }}
+                </div>
+              </div>
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">Total Cost:</div>
+                <div class="col m-0 p-0 text-right font-weight-bold">
+                  {{ data.totalCost | number: "1.0-2" }}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm p-0 m-0 mx-2">
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">Change:</div>
+                <div class="col m-0 p-0 text-right font-weight-bold" [class.text-danger]="data.change < 0" [class.text-success]="data.change > 0">
+                <i *ngIf="data.change > 0" class="text-success fa fa-caret-up"></i>
+                <i *ngIf="data.change < 0" class="text-danger fa fa-caret-down"></i>
+                  {{ data.change | number: "1.0-2" }}
+                </div>
+              </div>
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">Current Price:</div>
+                <div  class="col m-0 p-0 text-right font-weight-bold" [class.text-danger]="data.change < 0" [class.text-success]="data.change > 0">
+                  {{ data.currentPrice | number: "1.0-2" }}
+                </div>
+              </div>
+              <div class="row m-0 p-0">
+                <div class="col m-0 p-0">Market Value:</div>
+                <div  class="col m-0 p-0 text-right font-weight-bold" [class.text-danger]="data.change < 0" [class.text-success]="data.change > 0">
+                  {{ data.marketValue | number: "1.0-2" }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolioItemFooter py-1 px-3 d-flex justify-content-end border border-top-0">
+          <button class="btn btn-primary mx-1 border-0" (click)=" tradeStockTrans( data, 'Buy')">
+            Buy
+          </button>
+          <button class="btn btn-primary mx-1 bg-danger border-0" (click)=" tradeStockTrans( data, 'Sell' ) ">
+            Sell
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

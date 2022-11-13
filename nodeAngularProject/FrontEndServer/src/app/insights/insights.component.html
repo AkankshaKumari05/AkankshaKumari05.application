@@ -1,0 +1,54 @@
+<div class="container" id="InsightsContent">
+    <div class="row mt-3 text-center">
+      <h1>Social Sentiments</h1>
+
+      <div class="table-responsive">
+
+        <table class="table col-sm-6 mx-auto">
+
+          <thead>
+            <tr>
+              <th class="th-lg bg-secondary bg-opacity-10 ">{{comapanySentiments.companyName}}</th>
+              <th class="th-lg bg-secondary bg-opacity-10 ">Reddit</th>
+              <th class="th-lg bg-secondary bg-opacity-10 ">Twitter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class=" bg-secondary bg-opacity-10 ">Total Mentions</th>
+              <td>{{comapanySentiments.reddit.mention}}</td>
+              <td>{{comapanySentiments.twitter.mention}}</td>
+            </tr>
+            <tr>
+              <th scope="row" class=" bg-secondary bg-opacity-10 ">Positive Mentions</th>
+              <td>{{comapanySentiments.reddit.positiveMention}}</td>
+              <td>{{comapanySentiments.twitter.positiveMention}}</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-secondary bg-opacity-10 ">Negative Mentions</th>
+              <td>{{comapanySentiments.reddit.negativeMention}}</td>
+              <td>{{comapanySentiments.twitter.negativeMention}}</td>
+            </tr>
+          </tbody>
+      
+        </table>          
+      </div>
+
+
+    </div>
+    <div class="row">
+      <div class="highcharts-figure col-sm " >
+        <highcharts-chart *ngIf="recTrendChartFinish" [Highcharts]="Highcharts" 
+        [constructorType]="'chart'" [options]="recTrendChartOptions"
+        style="width: 100%; height: 400px; display: block">
+      </highcharts-chart>
+      </div>
+
+      <div class="highcharts-figure col-sm">
+        <highcharts-chart *ngIf="epsChartFinish" [Highcharts]="Highcharts"
+          [constructorType]="'chart'" [options]="epsChartOptions"
+          style="width: 100%; height: 400px; display: block">
+        </highcharts-chart> 
+      </div> 
+    </div>
+  </div>

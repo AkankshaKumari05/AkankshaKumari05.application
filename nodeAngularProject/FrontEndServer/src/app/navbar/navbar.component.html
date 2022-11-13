@@ -1,0 +1,17 @@
+<nav class="header fixed-top navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+        <ul class="nav navbar-brand">
+            <li class="navLeft">Stock Search</li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRight">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarRight">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item"><a id="searchBar" (click)="navigateToSearch()" class="nav-link navRight mx-2">Search</a></li>
+                <li class="nav-item"><a routerLink="watchlist" routerLinkActive="active" class="nav-link navRight mx-2">Watchlist</a></li>
+                <li class="nav-item"><a routerLink="portfolio" routerLinkActive="active" class="nav-link navRight mx-2">Portfolio</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>

@@ -1,0 +1,43 @@
+
+
+<div class="container my-5 p-0">
+    <h1 class="watchListHeader mx-2">My Watchlist</h1>
+</div>
+<div class="container my-0 p-0">
+    <mat-spinner *ngIf="!fetchFinish && !isEmpty" class="mt-4 mx-auto" ></mat-spinner>
+    <ngb-alert [dismissible]="false" *ngIf="isEmpty" class="text-center text-dark mx-3">
+        Currently you don't have any stock in your watchlist.
+    </ngb-alert>
+    <div *ngIf="fetchFinish && !isEmpty">
+        <div *ngFor="let data of watchListData" class="card p-0 my-3 mx-2 border">
+            <div id='{{ data.ticker }}"Close"' class="closeTickerDiv" (click)="removeFromWatchlist(data)">
+                <i class="fa fa-close"></i>
+            </div>
+            <div class="row mx-3 my-4" (click)="fetchDetails(data.ticker)">
+                <div class="col">
+                <h1 class="m-0 p-0 flex-row stockTicker">
+                    {{ data.ticker }}
+                </h1>
+                <h3 class="m-0 p-0 flex-row text-dark tickerName">
+                    {{ data.name }}
+                </h3>
+                </div>
+                <div class="col mr-1">
+                <h1 class="m-0 p-0 flex-row stockCurrentPrice d-flex flex-row-reverse"  [class.text-danger]="data.change < 0"
+                    [class.text-success]="data.change > 0" >
+                    {{ data.current }}
+                </h1>
+                <div
+                    class="m-0 p-0 flex-row d-flex flex-row-reverse change" [class.text-danger]="data.change < 0"
+                    [class.text-success]="data.change > 0" >
+                    <p class="m-0 p-0">
+                    <i *ngIf="data.change > 0" class="text-success fa fa-caret-up"></i>
+                    <i *ngIf="data.change < 0" class="text-danger fa fa-caret-down"></i>
+                    {{ data.change | number: "1.0-2" }}({{data.changePercent | number: "1.0-2"}}%)
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

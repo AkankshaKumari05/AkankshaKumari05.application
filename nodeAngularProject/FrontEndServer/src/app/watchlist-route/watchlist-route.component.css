@@ -1,0 +1,34 @@
+.watchListHeader {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 45px;
+    padding-top: 40px;
+  }
+  
+ .stockTicker{
+    font-size: 25px;
+    font-weight: 500;
+  }
+  
+  .stockCurrentPrice {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  
+ .tickerName {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .change {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .closeTickerDiv {
+    position: absolute;
+    right: 1%;
+    top: 5%;
+}
+  
+

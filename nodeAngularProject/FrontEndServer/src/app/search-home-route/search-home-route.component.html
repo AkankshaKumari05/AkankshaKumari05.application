@@ -1,0 +1,184 @@
+<div class="col-sm text-center" id="stockSearchTab">
+  <div id="stockSearchText">
+    <p>STOCK SEARCH</p>
+  </div>
+
+<form id="stockSearchBar" class="mx-auto" [formGroup]="stockSearchForm">
+  <div id="stockSearchBarOutline" class="input-group align-baseline rounded rounded-pill pl-3" >
+    <input id="searchValue" type="text" formControlName="tickerValue" placeholder="Enter stock ticker symbol" 
+    aria-describedby="searchBarIcon" class="form-control border-0 m-0 p-0" [matAutocomplete]="auto"
+    oninput="this.value =this.value == null ? '' : this.value.toUpperCase().trim()"/>
+
+    <mat-autocomplete  #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngIf="isLoading" class="isLoading"><mat-spinner diameter="30"></mat-spinner></mat-option>
+      <ng-container *ngIf="!isLoading">
+        <mat-option *ngFor="let autoData of autocompleteData" [value]="autoData" >
+          <div (click)="onSubmit(autoData)">
+            <span>{{ autoData.displaySymbol }}</span><small> | {{autoData.description }}</small>
+          </div>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+
+    <div class="input-group-append mx-2 border-0 p-0">
+      <button id="searchBarIcon" type="submit" class="btn btn-link text-primary m-0 border-0 p-0" (click)="onSubmit(stockSearchForm.value)">
+        <i class="fa fa-search"></i>
+      </button>
+      <button id="seachCloseIcon" (click)= 'resetForm()' type="reset" class="btn btn-link text-primary m-0 border-0 p-0">
+        <i class="fa fa-close"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+<div *ngIf="isDetailLoad">
+  <mat-spinner *ngIf=" (!companyDetails || !companyLatestStockPrice || !conpamyPeerDetails || !companyNews
+    || !dailyChartPrice || !histcharts || !comapanySentiments || !companyRecommendationTrend || !companyEarnings)
+    && tickerExists " class="mt-4 mx-auto"></mat-spinner>
+  <div *ngIf=" companyDetails && tickerExists && companyLatestStockPrice && conpamyPeerDetails && companyNews && 
+    dailyChartPrice && histcharts && comapanySentiments && companyRecommendationTrend && companyEarnings && !emptyTicker" class="container mt-5">
+
+      <ngb-alert  *ngIf="buySuccessMessage"  type="success" class="text-center" (close)="buySuccessMessage = ''" >
+        {{ ticker | uppercase }} bought successfully!
+      </ngb-alert> 
+
+      <ngb-alert  *ngIf="soldSuccessMessage"  type="danger" class="text-center" (close)="soldSuccessMessage = ''" >
+        {{ ticker | uppercase }} sold successfully!
+      </ngb-alert> 
+
+      <ngb-alert *ngIf="watchListSuccessMessage && isWatchlisted" type="success" class="text-center" (close)="watchListSuccessMessage = ''">
+        {{ ticker | uppercase }} added to Watchlist.
+      </ngb-alert>
+
+      <ngb-alert *ngIf="watchListSuccessMessage && !isWatchlisted" type="danger" class="text-center" (close)="watchListSuccessMessage = ''">
+        {{ ticker | uppercase }} removed from Watchlist.
+      </ngb-alert>
+
+      <div class="detail-header container-fluid">
+          <div class="row">
+            <div class="col-5 col-sm-4">
+              <h1 id="compDetail" class="m-0 p-0 d-flex flex-row" >
+                {{ companyDetails.ticker }}
+                <div class="m-1 p-0 d-inline-flex" (click)="onWatchList()">
+                  <i *ngIf="isWatchlisted" class="fa fa-star text-warning"></i>
+                  <i *ngIf="!isWatchlisted" class="fa fa-star-o "></i>
+                </div>
+              </h1>
+              <h3 class="m-0 p-0 text-black-50 d-flex flex-row" id="meta-name">
+                {{ companyDetails.name }}
+              </h3>
+              <h5 class="m-0 p-0 font-weight-light d-flex flex-row">
+                {{ companyDetails.exchange }}
+              </h5>
+              <button class="btn btn-primary m-0 p-1 px-3 bg-success border-0" id="buyButton"
+                (click)=" tradeStockTrans(companyDetails.ticker, companyDetails.name, companyLatestStockPrice.c, 'Buy' ) ">
+                Buy
+              </button>
+              <button *ngIf="enableSoldButton" class="btn btn-primary m-1 p-1 px-3 bg-danger border-0" id="sellButton"
+                (click)=" tradeStockTrans(companyDetails.ticker, companyDetails.name, companyLatestStockPrice.c, 'Sell' ) ">
+                Sell
+              </button>
+            </div>
+            <div id="compLogo" class="col-2 col-sm-4 p-0 text-center">
+              <img [src]="companyDetails.logo" alt="No image">
+            </div>
+            <div class="col-5 col-sm-4">
+              <h1 class= " lastLatest m-0 p-0 d-flex flex-row-reverse" [class.text-success]="difference > 0" [class.text-danger]="difference < 0">
+                {{ companyLatestStockPrice.c }}
+              </h1>
+              <h2 class="flex-row-reverse m-0 p-0 lastLatest mr-1 d-flex ">
+                  <span class=" lastestChange m-0 p-0 " [class.text-success]="difference > 0" [class.text-danger]="difference < 0" >
+                    ({{ diffPercent | number: "1.2-2" }}%)
+                  </span>
+                  <span class=" lastestChange m-0 p-0 px-1" [class.text-success]="difference > 0" [class.text-danger]="difference < 0" >
+                    {{ difference | number: "1.2-2" }}
+                  </span>
+                  <i *ngIf="difference > 0" class="text-success p-0 fa fa-caret-up"></i>
+                  <i *ngIf="difference < 0" class="text-danger p-0 fa fa-caret-down"></i>
+              </h2>
+      
+              <h5 class="m-0 p-0 font-weight-light d-flex flex-row-reverse">
+                {{ currentLocalTime | date: "yyyy-MM-dd H:mm:ss":"-0700" }}
+              </h5>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div  *ngIf="openStatus" class=" font-weight-bold text-success border-0 p-0 marketStatus" > Market is Open </div>
+            <div  *ngIf="!openStatus"  class=" font-weight-bold text-danger border-0 p-0 marketStatus" >
+              Market Closed on {{ lastTimestamp | date: "yyyy-MM-dd H:mm:ss":"-0700" }}
+            </div>
+          </div>
+        </div>
+    
+
+  <mat-tab-group mat-stretch-tabs>
+
+      <mat-tab label="Summary">
+        <div class="container" id="summaryTabContent">
+          <div class="row flex-row mt-4 ">
+            <div class="col-sm">
+              <div class="row ml-5">
+                  <p class="m-0"><span class="font-weight-bold">High Price:&#160; </span>{{ companyLatestStockPrice.h }}</p>
+                  <p class="m-0"><span class="font-weight-bold">Low Price:&#160;&#160;</span> {{ companyLatestStockPrice.l }}</p>
+                  <p class="m-0"><span class="font-weight-bold">Open Price: </span>{{ companyLatestStockPrice.o }}</p>
+                  <p class="m-0"><span class="font-weight-bold">Prev. Close: </span>{{ companyLatestStockPrice.pc }}</p>
+              </div>
+              <div class="row">
+                <h2 class=" mt-5 text-underline text-center"><u>About the company</u></h2>
+              </div>
+              <div class="row">
+                  <p class="m-0 p-0 py-1"><span class="font-weight-bold">IPO Start Date: </span>{{ companyDetails.ipo }}</p>
+                  <p class="m-0 p-0 py-1"><span class="font-weight-bold">Industry:</span> {{ companyDetails.finnhubIndustry }}</p>
+                  <p class="m-0 p-0 py-1"><span class="font-weight-bold">Webpage: </span><a class="text-decoration-none" target="_blank" [href]="companyDetails.weburl">{{ companyDetails.weburl }}</a></p>
+                  <p class="m-0 p-0 py-1 font-weight-bold">Company peers:</p>
+                  <div class="d-inline p-0">
+                      <span class="m-0 p-0 text-primary" *ngFor="let peer of conpamyPeerDetails" routerLink="/search/{{peer}}">
+                          {{peer}},
+                      </span>
+                  </div>
+              </div>
+              
+            </div>
+
+            <div class="col-sm m-2">
+              <app-dailychart [dailyChartData]=dailyChartPrice></app-dailychart>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+
+      
+      <mat-tab label="Top News">
+        <app-news [NewDetailData]="companyNews"></app-news>
+      </mat-tab>
+
+    
+      <mat-tab label="Charts">
+          <div class="container" >
+            <app-histchart [histChartData]=histcharts></app-histchart>
+          </div>
+      </mat-tab> 
+
+      <mat-tab label="Insights">
+        <app-insights [comapanySentiments]="comapanySentiments" [companyRecommendationTrend]="companyRecommendationTrend" [companyEarnings]="companyEarnings"></app-insights>
+      </mat-tab>
+
+    </mat-tab-group>
+
+    
+  </div> 
+
+  
+  <div *ngIf="companyDetails && !tickerExists && !emptyTicker" class="container mt-5">
+    <div class="alert alert-danger text-center text-dark" role="alert">
+      No results found. Please enter valid Ticker
+    </div>
+  </div>
+  <div *ngIf="emptyTicker" class="container mt-5">
+    <div class="alert alert-danger text-center text-dark" role="alert">
+      Please enter valid Ticker
+    </div>
+  </div>
+</div>
+
+

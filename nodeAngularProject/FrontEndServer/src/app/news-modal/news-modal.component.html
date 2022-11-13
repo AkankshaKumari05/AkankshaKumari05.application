@@ -1,0 +1,39 @@
+
+<div class="modal-header">
+    <div class="modal-title">
+      <h1 class="m-0">{{ news.source }}</h1>
+      <div class="text-black-50 m-0">
+        {{ news.datetime*1000 | date: "longDate":"-0700" }}
+      </div>
+    </div>
+    <button type="button" class="close p-0 border-0 m-1" aria-label="Close" (click)="newsModalService.dismiss('Cross click')">
+      <i class="fa fa-close"></i>
+    </button>
+</div>
+
+  <div class="modal-body">
+    <h2 class="m-0">{{ news.headline }}</h2>
+    <p class="m-0">{{ news.summary }}</p>
+    <p class="text-black-50 m-0 mb-3"> For more details click
+      <a class="text-primary" (click)="goToLink(news.url)">here</a>
+    </p>
+    <div class="card m-2 mx-auto">
+      <div class="card-body">
+        <div class="row mx-1">Share</div>
+        <div class=" p-0 mx-1 mt-3 ">
+          <div class="d-inline">
+            <a class="m-0 p-0 d-inline twitter-share-button text-primary btn btn-social btn-twitter"
+            href="https://twitter.com/intent/tweet?text={{ news.headline }}&url={{ news.url }}" target="_blank" data-size="large">
+            <i class="m-0 p-0 fa fa-2x fa-twitter"></i>
+          </a>
+          </div>
+          <div class="m-0 mx-1 p-0 d-inline btn fb-share-button"
+            data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large">
+            <a target="_blank" href="{{ fbSrc }}" class="facebookModalIcon fb-xfbml-parse-ignore text-decoration-none" >
+              <i class="m-0 p-0 fa fa-2x fab fa-facebook-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

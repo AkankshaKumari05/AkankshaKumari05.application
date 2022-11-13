@@ -1,0 +1,31 @@
+.tradeHeader button {
+    outline: none;
+    box-shadow: none;
+  }
+  
+.tradeFooter button {
+    outline: none;
+    box-shadow: none;
+  
+  }
+
+.tradeFooter{
+  display: flex;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.tradeBody p{
+  margin: 0 !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
